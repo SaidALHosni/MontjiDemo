@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Dashboard - Montji</title>
+   <link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../images/default-profile.jpg" alt="Profile">
+                <h3>Oman Fast Delivery</h3>
+                <p>Delivery Company</p>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview">Overview</a></li>
+                    <li><a href="#orders">Delivery Orders</a></li>
+                    <li><a href="#drivers">Drivers</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>Delivery Dashboard</h1>
+                <div class="notifications">
+                    <span class="notification-badge">4</span>
+                    <span class="user-actions">Delivery Management</span>
+                </div>
+            </header>
+            
+            <section id="overview" class="dashboard-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Today's Deliveries</h3>
+                        <p>18</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Deliveries</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Drivers</h3>
+                        <p>7</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Monthly Revenue</h3>
+                        <p>1,250.500 OMR</p>
+                    </div>
+                </div>
+                
+                <div class="active-deliveries">
+                    <h2>Active Deliveries</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Pickup From</th>
+                                <th>Delivery To</th>
+                                <th>Driver</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12348</td>
+                                <td>Yousuf Al-Rahbi</td>
+                                <td>Omani Taste Shop</td>
+                                <td>Qurum, Muscat</td>
+                                <td>Salim Al-Hashmi</td>
+                                <td><span class="status in-progress">In Transit</span></td>
+                                <td><button class="action-button">Track</button></td>
+                            </tr>
+                            <tr>
+                                <td>#12347</td>
+                                <td>Fatma Al-Harthy</td>
+                                <td>Al Said Family</td>
+                                <td>Azaiba, Muscat</td>
+                                <td>Mohammed Al-Kindi</td>
+                                <td><span class="status ready">Ready for Pickup</span></td>
+                                <td><button class="action-button">Assign</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="orders" class="dashboard-section" style="display:none">
+                <h2>Delivery Orders</h2>
+                <div class="delivery-filters">
+                    <select>
+                        <option>All Deliveries</option>
+                        <option>Pending Assignment</option>
+                        <option>Ready for Pickup</option>
+                        <option>In Transit</option>
+                        <option>Delivered</option>
+                        <option>Cancelled</option>
+                    </select>
+                    <input type="date" placeholder="Filter by date">
+                </div>
+                
+                <table class="deliveries-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Pickup From</th>
+                            <th>Delivery To</th>
+                            <th>Distance</th>
+                            <th>Fee</th>
+                            <th>Status</th>
+                            <th>Driver</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12348</td>
+                            <td>2023-11-15</td>
+                            <td>Yousuf Al-Rahbi</td>
+                            <td>Omani Taste Shop</td>
+                            <td>Qurum, Muscat</td>
+                            <td>12km</td>
+                            <td>2.000 OMR</td>
+                            <td>
+                                <select class="status-select">
+                                    <option>Pending</option>
+                                    <option>Ready for Pickup</option>
+                                    <option selected>In Transit</option>
+                                    <option>Delivered</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="driver-select">
+                                    <option>Salim Al-Hashmi</option>
+                                    <option>Mohammed Al-Kindi</option>
+                                    <option>Khalid Al-Balushi</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12347</td>
+                            <td>2023-11-15</td>
+                            <td>Fatma Al-Harthy</td>
+                            <td>Al Said Family</td>
+                            <td>Azaiba, Muscat</td>
+                            <td>8km</td>
+                            <td>2.000 OMR</td>
+                            <td>
+                                <select class="status-select">
+                                    <option>Pending</option>
+                                    <option selected>Ready for Pickup</option>
+                                    <option>In Transit</option>
+                                    <option>Delivered</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="driver-select">
+                                    <option selected>Assign Driver</option>
+                                    <option>Salim Al-Hashmi</option>
+                                    <option>Mohammed Al-Kindi</option>
+                                    <option>Khalid Al-Balushi</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="drivers" class="dashboard-section" style="display:none">
+                <h2>Driver Management</h2>
+                
+                <button class="add-driver-button">+ Add New Driver</button>
+                
+                <table class="drivers-table">
+                    <thead>
+                        <tr>
+                            <th>Driver ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Vehicle</th>
+                            <th>Current Location</th>
+                            <th>Status</th>
+                            <th>Assigned Orders</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>D1001</td>
+                            <td>Salim Al-Hashmi</td>
+                            <td>+968 9123 4567</td>
+                            <td>Toyota Hilux (1234)</td>
+                            <td>Qurum, Muscat</td>
+                            <td><span class="status busy">On Delivery</span></td>
+                            <td>1</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>D1002</td>
+                            <td>Mohammed Al-Kindi</td>
+                            <td>+968 9234 5678</td>
+                            <td>Nissan Sunny (5678)</td>
+                            <td>Al Khuwair, Muscat</td>
+                            <td><span class="status available">Available</span></td>
+                            <td>0</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="reports" class="dashboard-section" style="display:none">
+                <h2>Delivery Reports</h2>
+                
+                <div class="report-filters">
+                    <select>
+                        <option>Delivery Performance</option>
+                        <option>Driver Performance</option>
+                        <option>Revenue Report</option>
+                    </select>
+                    <input type="date" placeholder="From">
+                    <input type="date" placeholder="To">
+                    <button class="generate-button">Generate Report</button>
+                    <button class="export-button">Export to Excel</button>
+                </div>
+                
+                <div class="report-results">
+                    <h3>Delivery Performance - Last 30 Days</h3>
+                    <div class="chart-placeholder">
+                        <!-- In a real app, this would be a chart -->
+                        <p>[Delivery Performance Chart Would Appear Here]</p>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Current Period</th>
+                                <th>Previous Period</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Deliveries</td>
+                                <td>245</td>
+                                <td>198</td>
+                                <td><span class="positive">+47 (23.7%)</span></td>
+                            </tr>
+                            <tr>
+                                <td>On-Time Rate</td>
+                                <td>92%</td>
+                                <td>88%</td>
+                                <td><span class="positive">+4%</span></td>
+                            </tr>
+                            <tr>
+                                <td>Total Revenue</td>
+                                <td>1,250.500 OMR</td>
+                                <td>980.750 OMR</td>
+                                <td><span class="positive">+269.750 OMR (27.5%)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="settings" class="dashboard-section" style="display:none">
+                <h2>Company Settings</h2>
+                
+                <form class="company-settings">
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" value="Oman Fast Delivery">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Contact Person</label>
+                        <input type="text" value="Salim Al-Hashmi">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="info@ofd.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+968 2456 7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Areas Covered</label>
+                        <textarea>Muscat, Seeb, Bowsher, Azaiba, Qurum</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Delivery Rates</label>
+                        <div class="delivery-rates">
+                            <div class="rate-item">
+                                <span>Base Rate (0-30km)</span>
+                                <input type="number" value="2.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>Per Additional 30km</span>
+                                <input type="number" value="1.000" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Company Logo</label>
+                        <input type="file">
+                        <p class="hint">Current logo:</p>
+                        <img src="../images/ofd-logo.jpg" alt="Current Logo" style="max-width: 150px; margin-top: 0.5rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Change Password</label>
+                        <input type="password" placeholder="New Password">
+                        <input type="password" placeholder="Confirm Password" style="margin-top: 0.5rem;">
+                    </div>
+                    
+                    <button type="submit" class="save-button">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

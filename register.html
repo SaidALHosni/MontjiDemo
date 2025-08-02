@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Montji</title>
+   <link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+	
+        <div class="logo">Montji</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="register-container">
+        <h1>Create Your Account</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" data-tab="customer">Customer</button>
+            <button class="tab-button" data-tab="family">Family Business</button>
+            <button class="tab-button" data-tab="business">Businessman</button>
+            <button class="tab-button" data-tab="delivery">Delivery Company</button>
+        </div>
+        
+        <!-- Customer Registration Form -->
+        <form id="customer-form" class="tab-content active">
+            <div class="form-group">
+                <label for="cust-name">Full Name</label>
+                <input type="text" id="cust-name" required>
+            </div>
+            <div class="form-group">
+                <label for="cust-email">Email</label>
+                <input type="email" id="cust-email" required>
+            </div>
+            <div class="form-group">
+                <label for="cust-phone">Phone Number</label>
+                <input type="tel" id="cust-phone" required>
+            </div>
+            <div class="form-group">
+                <label for="cust-password">Password</label>
+                <input type="password" id="cust-password" required>
+            </div>
+            <div class="form-group">
+                <label for="cust-address">Delivery Address</label>
+                <textarea id="cust-address" rows="3"></textarea>
+            </div>
+            <button type="submit" class="register-button">Register as Customer</button>
+        </form>
+        
+        <!-- Family Business Registration Form -->
+        <form id="family-form" class="tab-content">
+            <div class="form-group">
+                <label for="family-name">Business Name</label>
+                <input type="text" id="family-name" required>
+            </div>
+            <div class="form-group">
+                <label for="family-owner">Owner Name</label>
+                <input type="text" id="family-owner" required>
+            </div>
+            <div class="form-group">
+                <label for="family-email">Email</label>
+                <input type="email" id="family-email" required>
+            </div>
+            <div class="form-group">
+                <label for="family-phone">Phone Number</label>
+                <input type="tel" id="family-phone" required>
+            </div>
+            <div class="form-group">
+                <label for="family-password">Password</label>
+                <input type="password" id="family-password" required>
+            </div>
+            <div class="form-group">
+                <label for="family-address">Business Address</label>
+                <textarea id="family-address" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="family-cuisine">Cuisine Type</label>
+                <select id="family-cuisine" multiple>
+                    <option value="omani">Omani</option>
+                    <option value="egyptian">Egyptian</option>
+                    <option value="arabic">Arabic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="family-logo">Business Logo</label>
+                <input type="file" id="family-logo">
+            </div>
+            <button type="submit" class="register-button">Register as Family Business</button>
+        </form>
+        
+        <!-- Businessman Registration Form -->
+        <form id="business-form" class="tab-content">
+            <!-- Similar structure to family form with businessman specific fields -->
+        </form>
+        
+        <!-- Delivery Company Registration Form -->
+        <form id="delivery-form" class="tab-content">
+            <!-- Similar structure with delivery company specific fields -->
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Montji. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

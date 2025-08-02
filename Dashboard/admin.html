@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Montji</title>
+    <link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+  	 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../images/default-profile.jpg" alt="Profile">
+                <h3>Admin User</h3>
+                <p>Administrator</p>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview">Overview</a></li>
+                    <li><a href="#businesses">Businesses</a></li>
+                    <li><a href="#customers">Customers</a></li>
+                    <li><a href="#employees">Employees</a></li>
+                    <li><a href="#delivery">Delivery Companies</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+		
+                <h1>Admin Dashboard</h1>
+                <div class="notifications">
+                    <span class="notification-badge">3</span>
+                    <span class="user-actions">System Administrator</span>
+                </div>
+            </header>
+            
+            <section id="overview" class="dashboard-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Total Businesses</h3>
+                        <p>42</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Customers</h3>
+                        <p>1,256</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Orders</h3>
+                        <p>87</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Monthly Revenue</h3>
+                        <p>2,450.750 OMR</p>
+                    </div>
+                </div>
+                
+                <div class="pending-approvals">
+                    <h2>Pending Approvals</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Submitted</th>
+                                <th>Details</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Family Business</td>
+                                <td>Mohammed's Kitchen</td>
+                                <td>2023-11-14</td>
+                                <td>Omani Cuisine</td>
+                                <td>
+                                    <button class="approve-button">Approve</button>
+                                    <button class="reject-button">Reject</button>
+                                    <button class="view-button">View</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Businessman</td>
+                                <td>Salalah Food Center</td>
+                                <td>2023-11-13</td>
+                                <td>Restaurant in Salalah</td>
+                                <td>
+                                    <button class="approve-button">Approve</button>
+                                    <button class="reject-button">Reject</button>
+                                    <button class="view-button">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="businesses" class="dashboard-section" style="display:none">
+                <h2>Business Management</h2>
+                
+                <div class="management-filters">
+                    <select>
+                        <option>All Businesses</option>
+                        <option>Family Businesses</option>
+                        <option>Businessmen</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                    <input type="text" placeholder="Search businesses...">
+                    <button class="export-button">Export to Excel</button>
+                </div>
+                
+                <table class="management-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Join Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1001</td>
+                            <td>Family</td>
+                            <td>Al Said Family</td>
+                            <td>Salim Al Said</td>
+                            <td>Muscat</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2023-05-15</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1002</td>
+                            <td>Businessman</td>
+                            <td>Omani Taste Shop</td>
+                            <td>Ahmed Al-Balushi</td>
+                            <td>Muscat</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2023-06-02</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="customers" class="dashboard-section" style="display:none">
+                <h2>Customer Management</h2>
+                
+                <div class="management-filters">
+                    <select>
+                        <option>All Customers</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                    <input type="text" placeholder="Search customers...">
+                    <button class="export-button">Export to Excel</button>
+                </div>
+                
+                <table class="management-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Location</th>
+                            <th>Orders</th>
+                            <th>Join Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5001</td>
+                            <td>Ahmed Al-Said</td>
+                            <td>ahmed@example.com</td>
+                            <td>+968 9123 4567</td>
+                            <td>Muscat</td>
+                            <td>12</td>
+                            <td>2023-07-10</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5002</td>
+                            <td>Fatma Al-Harthy</td>
+                            <td>fatma@example.com</td>
+                            <td>+968 9234 5678</td>
+                            <td>Salalah</td>
+                            <td>8</td>
+                            <td>2023-08-15</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="employees" class="dashboard-section" style="display:none">
+                <h2>Employee Management</h2>
+                
+                <button class="add-employee-button">+ Add New Employee</button>
+                
+                <table class="management-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Join Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2001</td>
+                            <td>Khalid Al-Rahbi</td>
+                            <td>khalid@montji.com</td>
+                            <td>+968 9345 6789</td>
+                            <td>Support</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2023-01-15</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2002</td>
+                            <td>Mariam Al-Zadjali</td>
+                            <td>mariam@montji.com</td>
+                            <td>+968 9456 7890</td>
+                            <td>Delivery</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>2023-02-20</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="delivery" class="dashboard-section" style="display:none">
+                <h2>Delivery Company Management</h2>
+                
+                <button class="add-delivery-button">+ Add New Company</button>
+                
+                <table class="management-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Contact Person</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Areas Covered</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3001</td>
+                            <td>Montji Delivery</td>
+                            <td>Yousuf Al-Maamari</td>
+                            <td>yousuf@montji.com</td>
+                            <td>+968 9567 8901</td>
+                            <td>Muscat, Seeb</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3002</td>
+                            <td>Oman Fast Delivery</td>
+                            <td>Salim Al-Hashmi</td>
+                            <td>salim@ofd.com</td>
+                            <td>+968 9678 9012</td>
+                            <td>All Oman</td>
+                            <td><span class="status active">Active</span></td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="edit-button">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="reports" class="dashboard-section" style="display:none">
+                <h2>System Reports</h2>
+                
+                <div class="report-filters">
+                    <select>
+                        <option>Sales Report</option>
+                        <option>Business Growth</option>
+                        <option>Customer Growth</option>
+                        <option>Revenue Breakdown</option>
+                        <option>Commission Report</option>
+                    </select>
+                    <input type="date" placeholder="From">
+                    <input type="date" placeholder="To">
+                    <button class="generate-button">Generate Report</button>
+                    <button class="export-button">Export to PDF</button>
+                </div>
+                
+                <div class="report-results">
+                    <h3>System Overview - Last 30 Days</h3>
+                    <div class="chart-placeholder">
+                        <!-- In a real app, this would be a chart -->
+                        <p>[System Overview Chart Would Appear Here]</p>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Current Period</th>
+                                <th>Previous Period</th>
+                                <th>Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Orders</td>
+                                <td>1,245</td>
+                                <td>1,087</td>
+                                <td><span class="positive">+158 (14.5%)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Total Revenue</td>
+                                <td>8,450.750 OMR</td>
+                                <td>7,230.500 OMR</td>
+                                <td><span class="positive">+1,220.250 OMR (16.9%)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Commission Earned</td>
+                                <td>845.075 OMR</td>
+                                <td>723.050 OMR</td>
+                                <td><span class="positive">+122.025 OMR (16.9%)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="settings" class="dashboard-section" style="display:none">
+                <h2>System Settings</h2>
+                
+                <form class="system-settings">
+                    <div class="form-group">
+                        <label>Platform Name</label>
+                        <input type="text" value="Montji">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Commission Rates</label>
+                        <div class="commission-rates">
+                            <div class="rate-item">
+                                <span>Joining Fee</span>
+                                <input type="number" value="2.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>Monthly Fee (Businessman)</span>
+                                <input type="number" value="10.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>Monthly Fee (Family)</span>
+                                <input type="number" value="5.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>Additional per 500 OMR</span>
+                                <input type="number" value="5.000" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Default Delivery Rates</label>
+                        <div class="delivery-rates">
+                            <div class="rate-item">
+                                <span>Base Rate (0-30km)</span>
+                                <input type="number" value="2.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>Per Additional 30km</span>
+                                <input type="number" value="1.000" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>System Logo</label>
+                        <input type="file">
+                        <p class="hint">Current logo:</p>
+                        <img src="../images/montji-logo.jpg" alt="Current Logo" style="max-width: 150px; margin-top: 0.5rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Maintenance Mode</label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="save-button">Save Settings</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Businessman Dashboard - Montji</title>
+<link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../images/default-profile.jpg" alt="Profile">
+                <h3>Omani Taste Shop</h3>
+                <p>Businessman</p>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview">Overview</a></li>
+                    <li><a href="#orders">Orders</a></li>
+                    <li><a href="#dishes">Dishes</a></li>
+                    <li><a href="#shelves">Shelves Rental</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+			
+                <h1>Businessman Dashboard</h1>
+                <div class="notifications">
+                    <span class="notification-badge">5</span>
+                    <span class="user-actions">Welcome back!</span>
+                </div>
+            </header>
+            
+            <section id="overview" class="dashboard-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Today's Orders</h3>
+                        <p>15</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Monthly Revenue</h3>
+                        <p>720.500 OMR</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Shelf Rentals</h3>
+                        <p>8 Active</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Rental Income</h3>
+                        <p>120.000 OMR</p>
+                    </div>
+                </div>
+                
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12348</td>
+                                <td>Yousuf Al-Rahbi</td>
+                                <td>2</td>
+                                <td>9.500 OMR</td>
+                                <td><span class="status preparing">Preparing</span></td>
+                                <td><button class="action-button">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#12347</td>
+                                <td>Fatma Al-Harthy</td>
+                                <td>3</td>
+                                <td>12.500 OMR</td>
+                                <td><span class="status ready">Ready for Pickup</span></td>
+                                <td><button class="action-button">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="orders" class="dashboard-section" style="display:none">
+                <h2>Order Management</h2>
+                <div class="order-filters">
+                    <select>
+                        <option>All Orders</option>
+                        <option>Pending Approval</option>
+                        <option>Preparing</option>
+                        <option>Ready for Pickup</option>
+                        <option>In Delivery</option>
+                        <option>Delivered</option>
+                        <option>Cancelled</option>
+                    </select>
+                    <input type="date" placeholder="Filter by date">
+                    <button class="approve-all">Approve Selected</button>
+                </div>
+                
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#12348</td>
+                            <td>2023-11-15</td>
+                            <td>Yousuf Al-Rahbi</td>
+                            <td>2</td>
+                            <td>9.500 OMR</td>
+                            <td>
+                                <select class="status-select">
+                                    <option>Pending Approval</option>
+                                    <option selected>Preparing</option>
+                                    <option>Ready for Pickup</option>
+                                    <option>In Delivery</option>
+                                    <option>Delivered</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" checked></td>
+                            <td>#12347</td>
+                            <td>2023-11-15</td>
+                            <td>Fatma Al-Harthy</td>
+                            <td>3</td>
+                            <td>12.500 OMR</td>
+                            <td>
+                                <select class="status-select">
+                                    <option>Pending Approval</option>
+                                    <option>Preparing</option>
+                                    <option selected>Ready for Pickup</option>
+                                    <option>In Delivery</option>
+                                    <option>Delivered</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="dishes" class="dashboard-section" style="display:none">
+                <h2>Dish Management</h2>
+                <button class="add-dish-button">+ Add New Dish</button>
+                
+                <div class="dish-cards">
+                    <div class="dish-card">
+                        <img src="../images/kabsa.jpg" alt="Kabsa Rice">
+                        <div class="dish-info">
+                            <h3>Kabsa with Lamb</h3>
+                            <p class="price">7.000 OMR</p>
+                            <p class="cost">Cost: 3.500 OMR</p>
+                            <p class="profit">Profit: 3.500 OMR (50%)</p>
+                            <p class="description">Authentic Saudi dish with spiced rice and lamb</p>
+                            <div class="dish-actions">
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dish-card">
+                        <img src="../images/mandi-chicken.jpg" alt="Mandi Chicken">
+                        <div class="dish-info">
+                            <h3>Mandi Chicken</h3>
+                            <p class="price">5.500 OMR</p>
+                            <p class="cost">Cost: 2.750 OMR</p>
+                            <p class="profit">Profit: 2.750 OMR (50%)</p>
+                            <p class="description">Traditional Yemeni dish with fragrant rice and tender chicken</p>
+                            <div class="dish-actions">
+                                <button class="edit-button">Edit</button>
+                                <button class="delete-button">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="shelves" class="dashboard-section" style="display:none">
+                <h2>Shelf Rental Management</h2>
+                
+                <div class="shelf-requests">
+                    <h3>Pending Requests</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Family Business</th>
+                                <th>Shelf Size</th>
+                                <th>Monthly Offer</th>
+                                <th>Request Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fatima's Kitchen</td>
+                                <td>1.0m</td>
+                                <td>12.000 OMR</td>
+                                <td>2023-11-14</td>
+                                <td>
+                                    <button class="approve-button">Approve</button>
+                                    <button class="reject-button">Reject</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="current-shelves">
+                    <h3>Current Shelves</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Family Business</th>
+                                <th>Shelf Size</th>
+                                <th>Monthly Rent</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Al Said Family</td>
+                                <td>1.2m</td>
+                                <td>15.000 OMR</td>
+                                <td>2023-10-01</td>
+                                <td>2023-12-31</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button class="action-button">Manage</button></td>
+                            </tr>
+                            <tr>
+                                <td>Mohammed's Kitchen</td>
+                                <td>0.8m</td>
+                                <td>10.000 OMR</td>
+                                <td>2023-11-01</td>
+                                <td>2024-01-31</td>
+                                <td><span class="status active">Active</span></td>
+                                <td><button class="action-button">Manage</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="reports" class="dashboard-section" style="display:none">
+                <h2>Business Reports</h2>
+                
+                <div class="report-filters">
+                    <select>
+                        <option>Sales Report</option>
+                        <option>Profit Report</option>
+                        <option>Shelf Rental Report</option>
+                        <option>Combined Report</option>
+                    </select>
+                    <input type="date" placeholder="From">
+                    <input type="date" placeholder="To">
+                    <button class="generate-button">Generate Report</button>
+                    <button class="export-button">Export to Excel</button>
+                </div>
+                
+                <div class="report-results">
+                    <h3>Combined Report - Last 30 Days</h3>
+                    <div class="chart-placeholder">
+                        <!-- In a real app, this would be a chart -->
+                        <p>[Combined Sales and Rental Chart Would Appear Here]</p>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Food Sales</th>
+                                <th>Food Profit</th>
+                                <th>Rental Income</th>
+                                <th>Total Revenue</th>
+                                <th>Total Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-11-01 to 2023-11-07</td>
+                                <td>245.750 OMR</td>
+                                <td>122.875 OMR</td>
+                                <td>40.000 OMR</td>
+                                <td>285.750 OMR</td>
+                                <td>162.875 OMR</td>
+                            </tr>
+                            <tr>
+                                <td>2023-11-08 to 2023-11-14</td>
+                                <td>298.500 OMR</td>
+                                <td>149.250 OMR</td>
+                                <td>40.000 OMR</td>
+                                <td>338.500 OMR</td>
+                                <td>189.250 OMR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="settings" class="dashboard-section" style="display:none">
+                <h2>Business Settings</h2>
+                
+                <form class="business-settings">
+                    <div class="form-group">
+                        <label>Shop Name</label>
+                        <input type="text" value="Omani Taste Shop">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Owner Name</label>
+                        <input type="text" value="Ahmed Al-Balushi">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="omanitaste@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+968 9234 5678">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Shop Address</label>
+                        <textarea>456 Market Street, Muscat, Oman</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Cuisine Types</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" checked> Omani</label>
+                            <label><input type="checkbox"> Egyptian</label>
+                            <label><input type="checkbox" checked> Arabic</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Shop Logo</label>
+                        <input type="file">
+                        <p class="hint">Current logo:</p>
+                        <img src="../images/omanitaste-logo.jpg" alt="Current Logo" style="max-width: 150px; margin-top: 0.5rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Default Profit Margin (%)</label>
+                        <input type="number" value="50" min="0" max="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Shelf Rental Rates</label>
+                        <div class="shelf-rates">
+                            <div class="rate-item">
+                                <span>0.5m</span>
+                                <input type="number" value="8.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>1.0m</span>
+                                <input type="number" value="12.000" step="0.001">
+                            </div>
+                            <div class="rate-item">
+                                <span>1.5m</span>
+                                <input type="number" value="15.000" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Change Password</label>
+                        <input type="password" placeholder="New Password">
+                        <input type="password" placeholder="Confirm Password" style="margin-top: 0.5rem;">
+                    </div>
+                    
+                    <button type="submit" class="save-button">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - Montji</title>
+  <link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../images/default-profile.jpg" alt="Profile">
+                <h3>Khalid Al-Rahbi</h3>
+                <p>Support Employee</p>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview">Overview</a></li>
+                    <li><a href="#orders">Order Management</a></li>
+                    <li><a href="#complaints">Complaints</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>Employee Dashboard</h1>
+                <div class="notifications">
+                    <span class="notification-badge">2</span>
+                    <span class="user-actions">Support Team</span>
+                </div>
+            </header>
+            
+            <section id="overview" class="dashboard-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Assigned Complaints</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Orders</h3>
+                        <p>12</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Resolutions</h3>
+                        <p>3</p>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">📞</div>
+                            <div class="activity-content">
+                                <p>Responded to complaint #456 from Al Said Family</p>
+                                <small>Today, 10:30 AM</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📦</div>
+                            <div class="activity-content">
+                                <p>Updated status for order #12348 to "Preparing"</p>
+                                <small>Today, 9:15 AM</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="orders" class="dashboard-section" style="display:none">
+                <h2>Order Management</h2>
+                <div class="order-filters">
+                    <select>
+                        <option>All Orders</option>
+                        <option>Pending</option>
+                        <option>Preparing</option>
+                        <option>Ready for Pickup</option>
+                        <option>In Delivery</option>
+                        <option>Delivered</option>
+                        <option>Cancelled</option>
+                    </select>
+                    <input type="text" placeholder="Search orders...">
+                </div>
+                
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Business</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12348</td>
+                            <td>Yousuf Al-Rahbi</td>
+                            <td>Omani Taste Shop</td>
+                            <td>2</td>
+                            <td>9.500 OMR</td>
+                            <td>
+                                <select class="status-select">
+                                    <option>Pending</option>
+                                    <option selected>Preparing</option>
+                                    <option>Ready for Pickup</option>
+                                    <option>In Delivery</option>
+                                    <option>Delivered</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12347</td>
+                            <td>Fatma Al-Harthy</td>
+                            <td>Al Said Family</td>
+                            <td>3</td>
+                            <td>12.500 OMR</td>
+                            <td>
+                                <select class="status-select">
+                                    <option>Pending</option>
+                                    <option>Preparing</option>
+                                    <option selected>Ready for Pickup</option>
+                                    <option>In Delivery</option>
+                                    <option>Delivered</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="complaints" class="dashboard-section" style="display:none">
+                <h2>Complaint Management</h2>
+                
+                <div class="complaint-filters">
+                    <select>
+                        <option>All Complaints</option>
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Resolved</option>
+                    </select>
+                    <input type="text" placeholder="Search complaints...">
+                </div>
+                
+                <table class="complaints-table">
+                    <thead>
+                        <tr>
+                            <th>Complaint ID</th>
+                            <th>From</th>
+                            <th>Type</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#456</td>
+                            <td>Al Said Family</td>
+                            <td>Order Issue</td>
+                            <td>Wrong item delivered</td>
+                            <td>2023-11-15</td>
+                            <td><span class="status in-progress">In Progress</span></td>
+                            <td>You</td>
+                            <td>
+                                <button class="action-button">View</button>
+                                <button class="resolve-button">Resolve</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#455</td>
+                            <td>Ahmed Al-Said</td>
+                            <td>Delivery Issue</td>
+                            <td>Late delivery</td>
+                            <td>2023-11-14</td>
+                            <td><span class="status resolved">Resolved</span></td>
+                            <td>You</td>
+                            <td>
+                                <button class="action-button">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="settings" class="dashboard-section" style="display:none">
+                <h2>Employee Settings</h2>
+                
+                <form class="employee-settings">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Khalid Al-Rahbi">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="khalid@montji.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+968 9345 6789">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Department</label>
+                        <select>
+                            <option>Support</option>
+                            <option>Delivery</option>
+                            <option>Management</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Profile Picture</label>
+                        <input type="file">
+                        <p class="hint">Current picture:</p>
+                        <img src="../images/default-profile.jpg" alt="Current Profile" style="max-width: 150px; margin-top: 0.5rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Change Password</label>
+                        <input type="password" placeholder="New Password">
+                        <input type="password" placeholder="Confirm Password" style="margin-top: 0.5rem;">
+                    </div>
+                    
+                    <button type="submit" class="save-button">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

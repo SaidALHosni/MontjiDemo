@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Businessman Dashboard - Montji</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../images/default-profile.jpg" alt="Profile">
+                <h3>Business Name</h3>
+                <p>Businessman</p>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview">Overview</a></li>
+                    <li><a href="#orders">Orders</a></li>
+                    <li><a href="#dishes">Dishes</a></li>
+                    <li><a href="#shelves">Shelves Management</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>Business Dashboard</h1>
+                <div class="notifications">
+                    <span class="notification-badge">3</span>
+                    <span class="user-actions">Welcome back!</span>
+                </div>
+            </header>
+            
+            <section id="overview" class="dashboard-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Today's Orders</h3>
+                        <p>12</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Monthly Revenue</h3>
+                        <p>450.500 OMR</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Shelf Rentals</h3>
+                        <p>5 Active</p>
+                    </div>
+                </div>
+                
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>Ahmed Al-Said</td>
+                                <td>2</td>
+                                <td>8.500 OMR</td>
+                                <td><span class="status preparing">Preparing</span></td>
+                                <td><button class="action-button">View</button></td>
+                            </tr>
+                            <!-- More rows would be here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Other sections would be here (orders, dishes, shelves, reports, settings) -->
+        </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

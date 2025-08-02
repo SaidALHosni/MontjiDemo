@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Montji</title>
+    <link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="../images/default-profile.jpg" alt="Profile">
+                <h3>Ahmed Al-Said</h3>
+                <p>Customer</p>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview">Overview</a></li>
+                    <li><a href="#orders">My Orders</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>Customer Dashboard</h1>
+                <div class="notifications">
+                    <span class="notification-badge">1</span>
+                    <span class="user-actions">Welcome back, Ahmed!</span>
+                </div>
+            </header>
+            
+            <section id="overview" class="dashboard-section">
+                <div class="quick-actions">
+                    <button class="action-button" onclick="location.href='../search.html'">
+                        <i class="icon">🍴</i>
+                        <span>Order Food</span>
+                    </button>
+                    <button class="action-button">
+                        <i class="icon">⭐</i>
+                        <span>View Favorites</span>
+                    </button>
+                    <button class="action-button">
+                        <i class="icon">🔄</i>
+                        <span>Reorder</span>
+                    </button>
+                </div>
+                
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12347</td>
+                                <td>2023-11-14</td>
+                                <td>2</td>
+                                <td>11.000 OMR</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>
+                                    <button class="action-button">Details</button>
+                                    <button class="reorder-button">Reorder</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#12346</td>
+                                <td>2023-11-10</td>
+                                <td>1</td>
+                                <td>5.500 OMR</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td>
+                                    <button class="action-button">Details</button>
+                                    <button class="reorder-button">Reorder</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="orders" class="dashboard-section" style="display:none">
+                <h2>My Orders</h2>
+                <div class="order-filters">
+                    <select>
+                        <option>All Orders</option>
+                        <option>Pending</option>
+                        <option>Preparing</option>
+                        <option>Ready for Pickup</option>
+                        <option>In Delivery</option>
+                        <option>Delivered</option>
+                        <option>Cancelled</option>
+                    </select>
+                    <input type="date" placeholder="Filter by date">
+                </div>
+                
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12347</td>
+                            <td>2023-11-14</td>
+                            <td>2</td>
+                            <td>11.000 OMR</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td>
+                                <button class="action-button">Details</button>
+                                <button class="reorder-button">Reorder</button>
+                                <button class="review-button">Review</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>2023-11-10</td>
+                            <td>1</td>
+                            <td>5.500 OMR</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td>
+                                <button class="action-button">Details</button>
+                                <button class="reorder-button">Reorder</button>
+                                <button class="review-button">Review</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#12345</td>
+                            <td>2023-11-05</td>
+                            <td>3</td>
+                            <td>15.750 OMR</td>
+                            <td><span class="status cancelled">Cancelled</span></td>
+                            <td>
+                                <button class="action-button">Details</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="favorites" class="dashboard-section" style="display:none">
+                <h2>My Favorite Dishes</h2>
+                
+                <div class="favorite-cards">
+                    <div class="favorite-card">
+                        <img src="../images/mandi-chicken.jpg" alt="Mandi Chicken">
+                        <div class="favorite-info">
+                            <h3>Mandi Chicken</h3>
+                            <p class="business">Al Said Family</p>
+                            <p class="price">5.500 OMR</p>
+                            <div class="favorite-actions">
+                                <button class="order-button">Order Now</button>
+                                <button class="remove-button">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="favorite-card">
+                        <img src="../images/kabsa.jpg" alt="Kabsa Rice">
+                        <div class="favorite-info">
+                            <h3>Kabsa with Lamb</h3>
+                            <p class="business">Omani Taste Shop</p>
+                            <p class="price">7.000 OMR</p>
+                            <div class="favorite-actions">
+                                <button class="order-button">Order Now</button>
+                                <button class="remove-button">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="settings" class="dashboard-section" style="display:none">
+                <h2>Account Settings</h2>
+                
+                <form class="customer-settings">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Ahmed Al-Said">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="ahmed@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+968 9123 4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea>123 Beach Road, Muscat, Oman</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Preferred Delivery Company</label>
+                        <select>
+                            <option>Any Available</option>
+                            <option selected>Montji Delivery</option>
+                            <option>Oman Fast Delivery</option>
+                            <option>Express Courier</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Profile Picture</label>
+                        <input type="file">
+                        <p class="hint">Current picture:</p>
+                        <img src="../images/default-profile.jpg" alt="Current Profile" style="max-width: 150px; margin-top: 0.5rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Change Password</label>
+                        <input type="password" placeholder="New Password">
+                        <input type="password" placeholder="Confirm Password" style="margin-top: 0.5rem;">
+                    </div>
+                    
+                    <button type="submit" class="save-button">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

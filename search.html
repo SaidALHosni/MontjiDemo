@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Food - Montji</title>
+    <link rel="stylesheet" href="css/modern.css">
+<script src="js/modern.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+	
+        <div class="logo">Montji</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Browse Food</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="search-container">
+        <div class="search-filters">
+            <h2>Filter Options</h2>
+            
+            <div class="filter-group">
+                <h3>Cuisine Type</h3>
+                <label><input type="checkbox" name="cuisine" value="omani"> Omani</label>
+                <label><input type="checkbox" name="cuisine" value="egyptian"> Egyptian</label>
+                <label><input type="checkbox" name="cuisine" value="arabic"> Arabic</label>
+            </div>
+            
+            <div class="filter-group">
+                <h3>Location</h3>
+                <select>
+                    <option value="">All Areas</option>
+                    <option value="muscat">Muscat</option>
+                    <option value="salalah">Salalah</option>
+                    <option value="suhar">Suhar</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <input type="range" min="1" max="20" value="10">
+                <span id="price-range-value">Up to 10 OMR</span>
+            </div>
+            
+            <div class="filter-group">
+                <h3>Delivery Options</h3>
+                <label><input type="checkbox" name="delivery" value="pickup"> Pickup from Home</label>
+                <label><input type="checkbox" name="delivery" value="shop"> Pickup from Shop</label>
+                <label><input type="checkbox" name="delivery" value="delivery"> Home Delivery</label>
+            </div>
+            
+            <button class="apply-filters">Apply Filters</button>
+        </div>
+        
+        <div class="search-results">
+            <h2>Search Results</h2>
+            
+            <div class="sort-options">
+                <span>Sort by:</span>
+                <select>
+                    <option value="popular">Most Popular</option>
+                    <option value="rating">Highest Rating</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+            
+            <div class="result-cards">
+                <!-- Result cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Montji. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
